@@ -99,10 +99,7 @@ var Engine = (function(global) {
 
     function checkCollisions(){
         function collision(a, b) {
-              return a.x < b.x + 80 &&
-                     a.x + 80 > b.x &&
-                     a.y < b.y + 75 &&
-                     a.y + 75 > b.y;
+              return Math.abs(a.x - b.x) < 80&&Math.abs(a.y - b.y) < 75;
             }
         allEnemies.forEach(function(enemy){
             if(collision(player,enemy)){
